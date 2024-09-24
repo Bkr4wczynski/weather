@@ -3,33 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather app</title>
-    <link rel="stylesheet" href="/static/styles.css">
-</head>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" /></head>
 <body>
-    <form th:action="@{/weather/getWeather}" method="post">
-        <input type="text" name="city" placeholder="Enter a city location"/>
-        <select name="unitGroup">
-            <option value="us">US system</option>
-            <option value="metric">Metric system</option>
-        </select>
-        <button type="submit">Search</button>
-    </form>
-
-    <div th:if="${weather != null}">
-        <h1 th:text="${weather[0]}"></h1>
-        <h2 th:text="${weather[1]}"></h2>
-
-        <div>
-            <div>
-                <p th:text="${weather[2]}"></p>
-            </div>
-
-            <div>
-                <p th:text="${weather[3]}"></p>
-            </div>
+    <div class="contentDiv">
+        <div class="formDiv">
+            <form th:action="@{/weather/getWeather}" method="post">
+                <input type="text" name="city" placeholder="Enter a city location" spellcheck="false" class="search"/>
+                <select name="unitGroup" class="unitGroup">
+                    <option value="us">US system</option>
+                    <option value="metric">Metric system</option>
+                </select>
+                <button type="submit" class="searchButton">Search </button>
+            </form>
         </div>
 
-    </div>
+        <img width="256" height="256" th:src="@{/images/weather.png}">
 
+        <div th:if="${weather != null}" class="weatherDiv">
+            <h1 th:text="${weather[0]}" class="temp"></h1>
+            <h2 th:text="${weather[1]}" class="location"></h2>
+
+            <div class="detailsDiv">
+                <div>
+                    <p th:text="${weather[2]}" class="humidity"></p>
+                    <p>Humidity</p>
+                </div>
+
+                <div>
+                    <p th:text="${weather[3]}" class="windspeed"></p>
+                    <p>Wind speed</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

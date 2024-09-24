@@ -24,7 +24,7 @@ public class MainController {
     public String getWeather(@RequestParam String city, @RequestParam String unitGroup, Model model) {
         // Map weather = apiCaller.getWeather(city, unitGroup);
         // List<String> formattedWeather = formatWeatherData(weather);
-        List<String> formattedWeather = Arrays.asList("New York", "12.0", "23.0", "50.0");
+        List<String> formattedWeather = Arrays.asList("23.0", "New York", "10.0", "50.0");
         model.addAttribute("weather", formattedWeather);
         return "main.html";
     }

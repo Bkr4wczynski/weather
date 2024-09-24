@@ -1,0 +1,56 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', 'Sans-Serif'
+    box-sizing: border-box;
+}
+body{
+    background-color: #222222;
+}
+
+.contentDiv {
+    with: 90%;
+    max-width: 470px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color: #fff;
+    margin: 100px auto 0;
+    padding: 40px 35px;
+    text-align: center;
+}
+
+.weatherDiv h1 {
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.weatherDiv h2 {
+    font-size: 45px;
+    font-weight: 500;
+}
+
+.detailsDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding 0 20px;
+    margin-top: 50px
+}
+
+.search {
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 5px 10px;
+}
+
+.unitGroup {
+    border: none;
+    font-size: 15px;
+    padding: 5px 10px;
+}
+
+.searchButton {
+    border: none;
+    font-size: 15px;
+    padding: 5px 10px;
+}
