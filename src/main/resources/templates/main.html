@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather app</title>
+</head>
+<body>
+    <form th:action="@{/weather/getWeather}" method="post">
+        <input type="text" name="city" placeholder="Enter a city location"/>
+        <select name="unitGroup">
+            <option value="us">US system</option>
+            <option value="metric">Metric system</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+
+    <div>
+        <p th:if="${weather != null}" th:text="${weather}"></p>
+    </div>
+
+</body>
+</html>
