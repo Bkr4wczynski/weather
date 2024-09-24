@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather app</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <form th:action="@{/weather/getWeather}" method="post">
@@ -14,8 +15,20 @@
         <button type="submit">Search</button>
     </form>
 
-    <div>
-        <p th:if="${weather != null}" th:text="${weather}"></p>
+    <div th:if="${weather != null}">
+        <h1 th:text="${weather[0]}"></h1>
+        <h2 th:text="${weather[1]}"></h2>
+
+        <div>
+            <div>
+                <p th:text="${weather[2]}"></p>
+            </div>
+
+            <div>
+                <p th:text="${weather[3]}"></p>
+            </div>
+        </div>
+
     </div>
 
 </body>

@@ -22,8 +22,9 @@ public class MainController {
 
     @PostMapping("/getWeather")
     public String getWeather(@RequestParam String city, @RequestParam String unitGroup, Model model) {
-        Map weather = apiCaller.getWeather(city, unitGroup);
-        List<String> formattedWeather = formatWeatherData(weather);
+        // Map weather = apiCaller.getWeather(city, unitGroup);
+        // List<String> formattedWeather = formatWeatherData(weather);
+        List<String> formattedWeather = Arrays.asList("New York", "12.0", "23.0", "50.0");
         model.addAttribute("weather", formattedWeather);
         return "main.html";
     }
@@ -32,10 +33,10 @@ public class MainController {
         List<String> formattedWeatherData = new ArrayList<>();
         LinkedHashMap dayWeatherData = (LinkedHashMap) ((ArrayList<?>) weatherData.get("days")).get(0);
 
-        formattedWeatherData.add(String.valueOf(weatherData.get("resolvedAddress")));
-        formattedWeatherData.add(String.valueOf(dayWeatherData.get("windspeed")));
         formattedWeatherData.add(String.valueOf(dayWeatherData.get("temp")));
+        formattedWeatherData.add(String.valueOf(weatherData.get("resolvedAddress")));
         formattedWeatherData.add(String.valueOf(dayWeatherData.get("humidity")));
+        formattedWeatherData.add(String.valueOf(dayWeatherData.get("windspeed")));
 
         return formattedWeatherData;
     }
