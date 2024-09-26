@@ -9,8 +9,6 @@ body{
 }
 
 .contentDiv {
-    with: 90%;
-    max-width: 470px;
     background: linear-gradient(135deg, #00feba, #5b548a);
     color: #fff;
     margin: 100px auto 0;
@@ -53,4 +51,10 @@ body{
     border: none;
     font-size: 15px;
     padding: 5px 10px;
+}
+
+.error {
+    font-size: 45px;
+    font-weight: 500;
+    color: red;
 }

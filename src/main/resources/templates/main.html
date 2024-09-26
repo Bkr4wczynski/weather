@@ -18,6 +18,8 @@
         </div>
 
         <img width="256" height="256" th:src="@{/images/weather.png}">
+        <br>
+        <h2 th:if="${errorMessage}" th:text="${errorMessage}" class="error"></h2>
 
         <div th:if="${weather != null}" class="weatherDiv">
             <h1 th:text="${weather[0]}" class="temp"></h1>

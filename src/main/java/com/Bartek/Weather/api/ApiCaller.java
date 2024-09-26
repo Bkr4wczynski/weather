@@ -3,6 +3,8 @@ package com.Bartek.Weather.api;
 import org.springframework.web.client.RestClient;
 
 import java.net.URI;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 public class ApiCaller {
@@ -11,7 +13,7 @@ public class ApiCaller {
 
     private URI createUri(String city, String unitGroup) {
         return URI.create("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"
-                + city + "/last1days?unitGroup=" + unitGroup + "&key=" + API_KEY + "&contentType=json");
+                + URLEncoder.encode(city, StandardCharsets.UTF_8) + "/last1days?unitGroup=" + unitGroup + "&key=" + API_KEY + "&contentType=json");
     }
 
     public Map getWeather(String city, String unitGroup) {
