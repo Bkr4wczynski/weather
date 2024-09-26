@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class ApiCaller {
     private RestClient restClient = RestClient.create();
-    private static String API_KEY = "4J5DTX4MSX4C9V8DTLNTZFPJD";
+    private static String API_KEY = "My private api key";
 
     private URI createUri(String city, String unitGroup) {
         return URI.create("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"
